@@ -1,7 +1,7 @@
 {
   "name": "create-lafkn",
   "version": "1.0.0",
-  "description": "",
+  "description": "create lafkn project",
   "license": "ISC",
   "author": "Aníbal Jorquera<ajorquera.cornejo@gmail.com>",
   "type": "module",
