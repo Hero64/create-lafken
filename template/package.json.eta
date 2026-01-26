@@ -13,31 +13,31 @@
   },
   "dependencies": {
 <% if (it.services.includes('api')) { %>
-    "@lafken/api": "0.6.2",
+    "@lafken/api": "~0.6.3",
 <% } %>
 <% if (it.services.includes('auth')) { %>
-    "@lafken/auth": "0.6.2",
+    "@lafken/auth": "~0.6.3",
 <% } %>
 <% if (it.services.includes('bucket')) { %>
-    "@lafken/bucket": "0.6.2",
+    "@lafken/bucket": "~0.6.3",
 <% } %>
 <% if (it.services.includes('dynamo')) { %>
-    "@lafken/dynamo": "0.6.2",
+    "@lafken/dynamo": "~0.6.3",
 <% } %>
 <% if (it.services.includes('event')) { %>
-    "@lafken/event": "0.6.2",
+    "@lafken/event": "~0.6.3",
 <% } %>
 <% if (it.services.includes('queue')) { %>
-    "@lafken/queue": "0.6.2",
+    "@lafken/queue": "~0.6.3",
 <% } %>
 <% if (it.services.includes('schedule')) { %>
-    "@lafken/schedule": "0.6.2",
+    "@lafken/schedule": "~0.6.3",
 <% } %>
 <% if (it.services.includes('state-machine')) { %>
-    "@lafken/state-machine": "0.6.2",
+    "@lafken/state-machine": "~0.6.3",
 <% } %>
-    "@lafken/common": "0.6.2",
-    "@lafken/main": "0.6.2",
+    "@lafken/common": "~0.6.3",
+    "@lafken/main": "~0.6.3",
     "cdktf": "0.21.0"
   },
   "devDependencies": {
