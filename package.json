@@ -1,12 +1,13 @@
 {
   "name": "create-lafken",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "description": "Create a lafken project",
   "keywords": [
     "aws",
     "lafken",
     "serverless",
-    "cdk"
+    "cdk",
+    "cdktn"
   ],
   "license": "ISC",
   "author": "Aníbal Jorquera<ajorquera.cornejo@gmail.com>",

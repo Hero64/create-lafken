@@ -6,43 +6,44 @@
   "main": "dist/index.js",
   "scripts": {
     "build": "tsc",
-    "cdktf:deploy": "npm run build  && cdktf deploy",
-    "cdktf:destroy": "npm run build && cdktf destroy",
-    "cdktf:synth": "npm run build && cdktf synth",
+    "cdktn:deploy": "npm run build  && cdktn deploy",
+    "cdktn:destroy": "npm run build && cdktn destroy",
+    "cdktn:synth": "npm run build && cdktn synth",
     "clean": "rm -rf cdktf.out dist .out"
   },
   "dependencies": {
 <% if (it.services.includes('api')) { %>
-    "@lafken/api": "~0.6.3",
+    "@lafken/api": "^0.7.0",
 <% } %>
 <% if (it.services.includes('auth')) { %>
-    "@lafken/auth": "~0.6.3",
+    "@lafken/auth": "^0.7.0",
 <% } %>
 <% if (it.services.includes('bucket')) { %>
-    "@lafken/bucket": "~0.6.3",
+    "@lafken/bucket": "^0.7.0",
 <% } %>
 <% if (it.services.includes('dynamo')) { %>
-    "@lafken/dynamo": "~0.6.3",
+    "@lafken/dynamo": "^0.7.0",
 <% } %>
 <% if (it.services.includes('event')) { %>
-    "@lafken/event": "~0.6.3",
+    "@lafken/event": "^0.7.0",
 <% } %>
 <% if (it.services.includes('queue')) { %>
-    "@lafken/queue": "~0.6.3",
+    "@lafken/queue": "^0.7.0",
 <% } %>
 <% if (it.services.includes('schedule')) { %>
-    "@lafken/schedule": "~0.6.3",
+    "@lafken/schedule": "^0.7.0",
 <% } %>
 <% if (it.services.includes('state-machine')) { %>
-    "@lafken/state-machine": "~0.6.3",
+    "@lafken/state-machine": "^0.7.0",
 <% } %>
-    "@lafken/common": "~0.6.3",
-    "@lafken/main": "~0.6.3",
-    "cdktf": "0.21.0"
+    "@lafken/common": "^0.7.0",
+    "@lafken/main": "^0.7.0",
+    "constructs": "^10.4.5",
+    "cdktn": "^0.22.0",
   },
   "devDependencies": {
-    "@types/node": "25.0.10",
-    "cdktf-cli": "0.21.0",
-    "typescript": "5.9.3"
+    "@types/node": "^25.0.10",
+    "cdktn-cli": "^0.22.0"
+    "typescript": "^5.9.3"
   }
 }
