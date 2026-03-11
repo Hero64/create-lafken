@@ -13,6 +13,7 @@ interface TemplateContext {
   appName: string;
   services: string[];
   uuid: string;
+  lafkenVersion: string;
 }
 
 const execPromise = promisify(exec);
@@ -21,6 +22,17 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const TEMPLATE_DIR = path.join(__dirname, "../template");
+
+const DEFAULT_LAFKEN_VERSION = "0.8.0";
+
+const fetchLatestVersion = async (packageName: string): Promise<string> => {
+  try {
+    const { stdout } = await execPromise(`npm view ${packageName} version`);
+    return stdout.trim();
+  } catch {
+    return DEFAULT_LAFKEN_VERSION;
+  }
+};
 
 const processDirectory = async (
   src: string,
@@ -62,11 +74,11 @@ const checkDirectoryEmpty = async (dir: string): Promise<boolean> => {
 
 const main = async () => {
   try {
-    console.log("🌊 Welcome to Lafkn 🌊");
+    console.log("🌊 Welcome to Lafken 🌊");
 
     const appName = await input({
       message: "Project name:",
-      default: "my-lafkn-app",
+      default: "my-lafken-app",
       validate: (value) => {
         if (!value || value.trim().length === 0) {
           return "Project name cannot be empty";
@@ -159,12 +171,15 @@ const main = async () => {
       process.exit(1);
     }
 
+    const lafkenVersion = await fetchLatestVersion("@lafken/common");
+
     const uuid = crypto.randomUUID();
 
     await processDirectory(TEMPLATE_DIR, targetDir, {
       appName,
       services,
       uuid,
+      lafkenVersion,
     });
 
     console.log("✅ Project created successfully!");
@@ -185,7 +200,7 @@ const main = async () => {
       }
     }
 
-    console.log("\n🎉 All done! Happy coding with Lafkn!\n");
+    console.log("\n🎉 All done! Happy coding with Lafken!\n");
     console.log("Next steps:");
 
     if (!useCurrentDir) {

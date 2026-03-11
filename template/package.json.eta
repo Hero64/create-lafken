@@ -13,37 +13,37 @@
   },
   "dependencies": {
 <% if (it.services.includes('api')) { %>
-    "@lafken/api": "^0.7.0",
+    "@lafken/api": "^<%= it.lafkenVersion %>",
 <% } %>
 <% if (it.services.includes('auth')) { %>
-    "@lafken/auth": "^0.7.0",
+    "@lafken/auth": "^<%= it.lafkenVersion %>",
 <% } %>
 <% if (it.services.includes('bucket')) { %>
-    "@lafken/bucket": "^0.7.0",
+    "@lafken/bucket": "^<%= it.lafkenVersion %>",
 <% } %>
 <% if (it.services.includes('dynamo')) { %>
-    "@lafken/dynamo": "^0.7.0",
+    "@lafken/dynamo": "^<%= it.lafkenVersion %>",
 <% } %>
 <% if (it.services.includes('event')) { %>
-    "@lafken/event": "^0.7.0",
+    "@lafken/event": "^<%= it.lafkenVersion %>",
 <% } %>
 <% if (it.services.includes('queue')) { %>
-    "@lafken/queue": "^0.7.0",
+    "@lafken/queue": "^<%= it.lafkenVersion %>",
 <% } %>
 <% if (it.services.includes('schedule')) { %>
-    "@lafken/schedule": "^0.7.0",
+    "@lafken/schedule": "^<%= it.lafkenVersion %>",
 <% } %>
 <% if (it.services.includes('state-machine')) { %>
-    "@lafken/state-machine": "^0.7.0",
+    "@lafken/state-machine": "^<%= it.lafkenVersion %>",
 <% } %>
-    "@lafken/common": "^0.7.0",
-    "@lafken/main": "^0.7.0",
+    "@lafken/common": "^<%= it.lafkenVersion %>",
+    "@lafken/main": "^<%= it.lafkenVersion %>",
     "constructs": "^10.4.5",
-    "cdktn": "^0.22.0",
+    "cdktn": "^0.22.0"
   },
   "devDependencies": {
     "@types/node": "^25.0.10",
-    "cdktn-cli": "^0.22.0"
+    "cdktn-cli": "^0.22.0",
     "typescript": "^5.9.3"
   }
 }
